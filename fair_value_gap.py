@@ -183,10 +183,11 @@ def fvg_live(open, high, low, close, min_gap=0, std_len=30, std_strength=0.0001,
     fvg_bear_series = pd.Series(fvg_bear_array)
     fvg_bear_series.index = pd.Series(high.index).shift(1)
 
-    fvg_bull_series = fvg_bull_series.dropna()
-    fvg_bull_series = fvg_bull_series[fvg_bull_series.index.notnull()]
-    fvg_bear_series = fvg_bear_series.dropna()
-    fvg_bear_series = fvg_bear_series[fvg_bear_series.index.notnull()]
+    # No need for entry function
+    # fvg_bull_series = fvg_bull_series.dropna()
+    # fvg_bull_series = fvg_bull_series[fvg_bull_series.index.notnull()]
+    # fvg_bear_series = fvg_bear_series.dropna()
+    # fvg_bear_series = fvg_bear_series[fvg_bear_series.index.notnull()]
 
     # fvg = fvg_bull_series.fillna(fvg_bear_series)
 

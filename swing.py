@@ -55,40 +55,6 @@ def get_swings(df_full,window_size):
 
     return swing_high, swing_low
 
-# def get_swings_live(df,window_size):
-#     swing_high_list = []
-#     swing_high_time = []
-#     swing_low_list = []
-#     swing_low_time = []
-
-#     try:
-#         df = df[-2*window_size:]
-#     except:
-#         print("Selected data is not enough!")
-#         return swing_high, swing_low
-
-#     # for start in range(0, len(df) - window_size + 1): 
-#     # start = 0
-#     # end = -1 #start + window_size*2
-#     # df = df.iloc[start:end] 
-#     df['index'] = range(len(df)) 
-#     df = df.reset_index(drop=False) 
-#     # df['Datetime'] = df['Datetime'].dt.date 
-#     # df.columns = ['time','high','low','open','close','index'] 
-#     df = df.set_index('index') 
-
-#     if df['high'].max() == df['high'].iloc[window_size]:
-#             swing_high_list.append(df['high'].iloc[window_size])
-#             swing_high_time.append(df['Datetime'][window_size])
-
-#     if df['low'].min() == df['low'].iloc[window_size]:
-#         swing_low_list.append(df['low'].iloc[window_size])
-#         swing_low_time.append(df['Datetime'][window_size])
-
-#     swing_high = pd.DataFrame({'swing_high_time':swing_high_time,'swing_high_list':swing_high_list})
-#     swing_low = pd.DataFrame({'swing_low_time':swing_low_time,'swing_low_list':swing_low_list})
-
-#     return swing_high, swing_low
 
 def get_swings_live(df_full,window_size):
     swing_high_list = []
@@ -142,12 +108,6 @@ def get_swings_prev(df_full,window_size):
     swing_high_time = []
     swing_low_list = []
     swing_low_time = []
-
-    # try:
-    #     df = df[-2*window_size:]
-    # except:
-    #     print("Selected data is not enough!")
-    #     return swing_high, swing_low
 
     for start in range(0, len(df_full) - window_size*2 + 1): 
         # start = 0

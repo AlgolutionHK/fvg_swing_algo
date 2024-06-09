@@ -2,4 +2,8 @@ pandas
 yfinance
 pandas_ta
 trading-ig
-matplotlib.pyplot
+matplotlib
+munch
+more-itertools
+pytz
+Metatrader5
